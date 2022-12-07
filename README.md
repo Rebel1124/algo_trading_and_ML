@@ -226,7 +226,7 @@ In addition, the daily percentage change of the asset was calculated along with 
 
 <br>
 
-**3. Trading Strategy Returns**
+### **3. Trading Strategy Returns**
 
 Using the Techical Indicators calculated from step 2, we were then able to calculate the MACD, RSI, Impulse and Bollinger Bands returns (strategies and trade signals described above). In addition, since these strategies were more transparent and customizable, we were able to include a risk metric into the strategies. Accordingly, a stop/loss limit of 10% was set for each trade, meaning that if a long position was entered and the asset price fell by more than 10%, then the position was closed and converesely if a short position was enetered and the security price increased by 10% then this position was also closed. Thereafter, descriptive statistics and cumulative returns for each system was also calculated and compared to the assets Buy&Hold returns.
 
@@ -234,7 +234,7 @@ This was done for each of the considered securities and the results were then co
 
 <br>
 
-**4. Random Forest (Classification) Model Returns**
+### **4. Random Forest (Classification) Model Returns**
 
 Again using the dataset produced in step 2, we were able to run the Random Forest model for the raw indicators, rolling 30day zScore indicators as well as the normalised indicators as our feature variables. This 'signals' coulumn (calculated in step 2) was used as our target or y-variable. Consequently this produced three sets of results (raw indictors-transformed using standard scaler, zScores and Normalized). Similar to the Trading strategies in step 2, decriptive statistics and cumulative returns were calculated for each of these models (standard scaler, zScores and Normalized).
 
@@ -242,7 +242,7 @@ This was done for each security and the results were then compared to the techni
 
 <br>
 
-**5. Artificial Neural Network Returns**
+### **5. Artificial Neural Network Returns**
 
 Using the dataset for each asset class, we then ran the standard scaled raw indicators through the ANN model. Again the scaled indicators were used as our feature variables, however given the mechanics of the ANN model, the signals columns was transformed to 0 for sell and 1 for buy before being passed through the ANN model.
 
@@ -259,7 +259,17 @@ This model was then run for each asset with same cumulative returns and descript
 
 <br>
 
-**Random Forest Classification Report - Stadard Scaler Features**
+Firstly, our results from the Random Forest models were interesting. Accuracy scores between the three models considered ranged from 0.46 to 0.54. Even more noteworthy though was the models accuracy and recall score for the buy and sell signals. 
+
+Here we saw that some models performed better for buy signals than sell sgnals (zScore Model for S&P500), while for others it was the opposite (standard features for Gold). Interestingly there were even dramatic difference within an asset for pecision and recall scores as well (standard features - S&P500).
+
+In all, we got mixed bu satisfactory results for our Random Forest models. More work can be done on this however by tuning the models hyperparameters it is envisaged that better model results can be obtained.
+
+<br>
+
+### **Random Forest Classifiction Report**
+
+***(1) Stadard Scaler Features***
 
 
 |     Asset  	     |  Buy Prec  |	 Buy Recall |  Sell prec |  Sell Recall	 |  Accuracy  |
@@ -277,7 +287,7 @@ This model was then run for each asset with same cumulative returns and descript
 
 <br>
 
-**Random Forest Classification Report - Rolling 30day zScore Features**
+***(2) Rolling 30day zScore Features***
 
 
 |     Asset  	     |  Buy Prec  |	 Buy Recall |  Sell prec |  Sell Recall	 |  Accuracy  |
@@ -296,7 +306,7 @@ This model was then run for each asset with same cumulative returns and descript
 
 <br>
 
-**Random Forest Classification Report - Normalized Features**
+***(3) Normalized Features***
 
 
 |     Asset  	     |  Buy Prec  |	 Buy Recall |  Sell prec |  Sell Recall	 |  Accuracy  |
@@ -312,7 +322,13 @@ This model was then run for each asset with same cumulative returns and descript
 
 <br>
 
-**ANN Model Scores**
+Next for the Artificial Neural Network Model, we again received mixed results with accuracy scores between the training and test period ranging from 0,5 to 0.73, which in all accounts is a notable difference. In deed the biggest difference were observed for the crypto asset class (BTC and ETH) which we have attributed to the smaller training period window. 
+
+The difference in accuracy scores between training and test periods for the other asset classes, were also notable but not as dramatic and although not ideal looked satisfactory. However, we strongly believe further research can b done on improving these models and reducing the difference between traing and test scores.
+
+<br>
+
+### **ANN Model Scores**
 
 
 |     Asset  	     |  Training Acc  |	   Test Acc    | Training Loss  |   Test Loss	 |
@@ -330,11 +346,33 @@ This model was then run for each asset with same cumulative returns and descript
 
 <br>
 
-**Best Strategy Returns per Asset**
+Finally we looked at the returns produced by the models for each asset and determined the winning and runner up strategies for our back testing period. Results are shown in the tables below. Interesting, our analysis shows that there is a more or less even split between the traditional and ML/ANN models in terms of the best and second strategies when looking at the strategy returns as well as Sharpe ratios's.
+
+The ANN produced the highest return at 69.59% for ETH but was trumped by the Impulse system at 79.23%. It shoud be noted though that ETH had the smallest testing period due to limited data, nevertheless the results produced were notable.
+
+For the Random forest, the normalized features produced the highest returns for the Russel2000 at 23.08%, which beat the MACD strategy at 16.74%.
+
+In total 8 of the technical strategies had produced either winning returns or runner up returns and likewise we had 8 ML/ANN models producing the same resulting in a tie! (We found the exact same returns when accounting for volatility when we looked at the Sharpe ratio's).
+
+<br>
+
+### **Best Strategies per Asset**
+
+***(1) Asset Returns***
 
 
 <p align= "left" width="50">
-    <img width= "100%" src="allResults/allResults.png">
+    <img width= "100%" src="allResults/allResults_returns.png">
+</p>
+
+
+<br>
+
+***(2) Asset Sharpe Ratios***
+
+
+<p align= "left" width="50">
+    <img width= "100%" src="allResults/allResults_sharpe.png">
 </p>
 
 
@@ -353,18 +391,26 @@ For detailed cumulative return graphs and descriptive statistics for each asset 
 ---
 ## **Conclusion**
 
+Our study has indeed produced interesting results and although there was no clear winner between the technical strategies and ML/ANN models, we belive our research has set the foundation for further research in this topic.
+
+In particular, we believe that the ML/ANN models can be enhanced by incorporating the probability of signals into the model. It is envisioned that by trading on high probability signals, the returns for these models can be enhanced.
+
+In addition, we also believe that by setting risk limits, one can hoefully reduce the volatility of returns for the ML/ANN models and thereby increase the models Sharpe ratio.
+
+The possibilities for further investigation is endless, and we truely hope that our sparks more interest and research in this field!
+
 <br>
 
 ---
 ## **Postmortem**
 
-**- Artificial Neural Network Model**
+### **(1) Artificial Neural Network Model**
 
 We experienced the most difficulty with getting the ANN model to run correctly. Since we calculated buy and sell signals using +1 and -1 as our target/y-variable, the results we obtained were clearly incorrect and after much work, we eventually worked out that the signals had to be transformed into +1 for buy and 0 for sell before running it through the ANN model. Since the last layer used the sigmoid activation function, having signals with -1 somehow caused issues with model.
 
 <br>
 
-**- Data Issues Model**
+### **(2) Data Issues Model**
 
 For our Trading Strategues, we initially looked at including weekly data as well, however after calculater indicators and using them in our systems we found that for many strategies they produced look-ahaed bias and so it was decided to drop the weekly data from our study and only work with daily prices and indicators.
 
@@ -373,7 +419,7 @@ Another issue that was picked up with the weekly data was that for the Open, Hig
 <br>
 
 
-**- Look-ahead Bias**
+### **(3) Look-ahead Bias**
 
 For many of our models, we seemed to be generating exponential returns which suggested the model had some look-ahead bias. Again after much discussion (and experimentation), we finally worked out that by moving the "Actual Returns" and 'Signals' back one day then we could use the features and signals (as is from the dataset) and by applying the models predictions to the 'Actual Returns" (that we shifted back one day), we were able to overcome our look-ahead bia issue.
 
@@ -385,18 +431,21 @@ For many of our models, we seemed to be generating exponential returns which sug
 
 1. The New Trading For A Living - Author: Dr. Alexander Elder
 
-2. Pandas-TA Library - https://github.com/twopirllc/pandas-ta
+2. https://tradewithpython.com/generating-buy-sell-signals-using-python
 
-3. Investopedia - https://www.investopedia.com/terms/e/ema.asp
+3. Pandas-TA Library - https://github.com/twopirllc/pandas-ta
 
-4. Investopedia - https://www.investopedia.com/terms/r/rateofchange.asp
+4. Investopedia - https://www.investopedia.com/terms/e/ema.asp
 
-5. Investopedia - https://www.investopedia.com/terms/m/macd.asp
+5. Investopedia - https://www.investopedia.com/terms/r/rateofchange.asp
 
-6. Investopedia - https://www.investopedia.com/terms/r/rsi.asp
+6. Investopedia - https://www.investopedia.com/terms/m/macd.asp
 
-7. Investopedia - https://www.investopedia.com/terms/b/bollingerbands.asp
+7. Investopedia - https://www.investopedia.com/terms/r/rsi.asp
 
-8. Tradingview - https://www.tradingview.com/script/vv3r5BKm-MTM-Momentum-Indicator
+8. Investopedia - https://www.investopedia.com/terms/b/bollingerbands.asp
 
-9. Tradingview - https://www.tradingview.com/script/oCbEFfpg-Indicator-Elder-Impulse-System
+9. Tradingview - https://www.tradingview.com/script/vv3r5BKm-MTM-Momentum-Indicator
+
+10. Tradingview - https://www.tradingview.com/script/oCbEFfpg-Indicator-Elder-Impulse-System
+
