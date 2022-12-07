@@ -228,9 +228,9 @@ In addition, the daily percentage change of the asset was calculated along with 
 
 **3. Trading Strategy Returns**
 
-Using the Techical Indicators calculated from step 2, we were then able to calculate the MACD, RSI, Impulse and Bollinger Bands returns (strategies and trade signals described above). Descriptive statistics for each system was also calculated and compared to the assets benchmark Buy&Hold returns.
+Using the Techical Indicators calculated from step 2, we were then able to calculate the MACD, RSI, Impulse and Bollinger Bands returns (strategies and trade signals described above). In addition, since these strategies were more transparent and customizable, we were able to include a risk metric into the strategies. Accordingly, a stop/loss limit of 10% was set for each trade, meaning that if a long position was entered and the asset price fell by more than 10%, then the position was closed and converesely if a short position was enetered and the security price increased by 10% then this position was also closed. Thereafter, descriptive statistics and cumulative returns for each system was also calculated and compared to the assets Buy&Hold returns.
 
-Again this was done for each asset with descriptive statistics and cumulative returns calculated for each.
+This was done for each of the considered securities and the results were then compared to the Random Forest and ANN models.
 
 <br>
 
@@ -238,7 +238,7 @@ Again this was done for each asset with descriptive statistics and cumulative re
 
 Again using the dataset produced in step 2, we were able to run the Random Forest model for the raw indicators, rolling 30day zScore indicators as well as the normalised indicators as our feature variables. This 'signals' coulumn (calculated in step 2) was used as our target or y-variable. Consequently this produced three sets of results (raw indictors-transformed using standard scaler, zScores and Normalized). Similar to the Trading strategies in step 2, decriptive statistics and cumulative returns were calculated for each of these models (standard scaler, zScores and Normalized).
 
-This was done for each security and the results were then compared to the technical trading srategies (step 3) and ANN model (step 5) results.
+This was done for each security and the results were then compared to the technical trading srategies and ANN model.
 
 <br>
 
