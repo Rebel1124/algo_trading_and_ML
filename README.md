@@ -220,7 +220,7 @@ Similarly, we wanted to run the z-Scores features as well as the normalised feat
 - Price / Indicator -> upper BB, lower BB and middle BB
 - indicator / ((rolling 2stdev)*100) -> RSI, MOM, ROC
 - indicator / price -> 2stdev 
-- idicator (unchanged) - MACDline, MACDSignal and MACD-Histogram
+- idicator (unchanged) -> MACDline, MACDSignal and MACD-Histogram
 
 In addition, the daily percentage change of the asset was calculated along with a signal (1 if positive daily return and -1 if negative daily return) with both 'Actual Returns" and 'Signal" columns shifted back one day. This was done to make the computations for the Trading strategies, ML and ANN returns easier as well as to prevent look-ahead bias. Accordingly a dataset for each asset was obtained (following the same steps above) to be used in our analysis.
 
@@ -315,16 +315,16 @@ This model was then run for each asset with same cumulative returns and descript
 **ANN Model Scores**
 
 
-|     Asset  	     |  Training Acc  |	 Training Loss |  Test Accuracy |  Test Loss	 |  Accuracy  |
-|--------------------|----------------|----------------|----------------|----------------|------------|
-|       Oil          |                |	               |                |                |	     	  | 
-|      Gold	         |                |	               |                |      	         |            |
-|    Russel2000      |		          |                |                |                |	  	      | 
-|     S&P500         |	              |	               |                |                |            |
-|     EUR/USD        |                |                |                | 	             |            |
-|     GBP/JPY        |	 	          |                |                |  	             |            |
-|      BTC	         |                |                |                |                |		      |
-|      ETH           |	  	          |    	           |                |                |	          |
+|     Asset  	     |  Training Acc  |	   Test Acc    | Training Loss  |   Test Loss	 |
+|--------------------|----------------|----------------|----------------|----------------|
+|       Oil          |     0.5890     |	    0.5000     |     0.6737     |     0.7624     |	     	  
+|      Gold	         |     0.5865     |	    0.5202     |     0.6689     |     0.7090     |            
+|    Russel2000      |	   0.5981     |     0.5046     |     0.6597     |     0.7989     |	  	      
+|     S&P500         |	   0.5843     |	    0.5379     |     0.6737     |     0.7589     |            
+|     EUR/USD        |     0.5960     |     0.5019     |     0.6661     | 	  0.7178     |            
+|     GBP/JPY        |	   0.5772     |     0.5141     |     0.6733     |  	  0.7095     |            
+|      BTC	         |     0.6023     |     0.5172     |     0.6605     |     0.9139     |		      
+|      ETH           |	   0.7318     |    	0.5015     |     0.5842     |     1.3771     |	          
 
 
 
@@ -334,13 +334,17 @@ This model was then run for each asset with same cumulative returns and descript
 
 
 <p align= "left" width="50">
-    <img width= "50%" src="allResults/allResults.png">
+    <img width= "100%" src="allResults/allResults.png">
 </p>
 
 
 <br>
 
-Please change settings (top right to wide mode) and end date to 31-October-2022
+
+
+For detailed cumulative return graphs and descriptive statistics for each asset and for each of the Trading Strategies and Random Forest Models, please click on the link below. This is the streamlit application that we have built and deployed that alllows suers to not only see the results but to also interact with the models as well. Users can change various settings on the left sidebar and the app will recalculate the backtesting results - which we hope will make our study more dynamic and interactive.
+
+<b>Note:</b> Please change settings (top right to wide mode) and end date to 31-October-2022 to get to the same results as our investigation.
 
 **Click on link for detailed asset class analysis and statistics: [Asset Returns - Trading Strategy Analysis](https://rebel1124-algotrading-optimizer-algotrading-optimizer-ndyd3q.streamlit.app/)**
 
@@ -380,6 +384,7 @@ For many of our models, we seemed to be generating exponential returns which sug
 ## **Reference**
 
 1. The New Trading For A Living - Author: Dr. Alexander Elder
+
 2. Pandas-TA Library - https://github.com/twopirllc/pandas-ta
 
 3. Investopedia - https://www.investopedia.com/terms/e/ema.asp
