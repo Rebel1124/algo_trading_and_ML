@@ -216,8 +216,8 @@ After calculating the required indicators, we further calculated the rolling z-S
 
 Similarly, we wanted to run the z-Scores features as well as the normalised features each through the Random Forest Model and compare these to the Technical Strategy and ANN results. For the normalised feature set, we applied the following rules:
 
-- 1 day indiactor difference (indicator delta) -> 12Day EMA, 26Day EMA and 50Day SMA
-- Price / Indicator -> upper BB, lower BB and middle BB
+- one-day indicator difference (indicator delta) -> 12Day EMA, 26Day EMA and 50Day SMA
+- price / indicator -> upper BB, lower BB and middle BB
 - indicator / ((rolling 2stdev)*100) -> RSI, MOM, ROC
 - indicator / price -> 2stdev 
 - idicator (unchanged) -> MACDline, MACDSignal and MACD-Histogram
