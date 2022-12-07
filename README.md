@@ -352,7 +352,7 @@ The ANN produced the highest return at 69.59% for ETH but was trumped by the Imp
 
 For the Random forest, the normalized features produced the highest returns for the Russel2000 at 23.08%, which beat the MACD strategy at 16.74%.
 
-In total 8 of the technical strategies had produced either winning returns or runner up returns and likewise we had 8 ML/ANN models producing the same resulting in a tie! (We found the exact same returns when accounting for volatility when we looked at the Sharpe ratio's).
+In total 8 of the technical strategies had produced either winning returns or runner up returns and likewise we had 8 ML/ANN models producing the same resulting in a tie! (We found the exact same returns when accounting for volatility when we looked at the Sharpe ratio's). 
 
 <br>
 
@@ -395,7 +395,7 @@ Our study has indeed produced interesting results and although there was no clea
 
 In particular, we believe that the ML/ANN models can be enhanced by incorporating the probability of signals into the model. It is envisioned that by trading on high probability signals, the returns for these models can be enhanced.
 
-In addition, we also believe that by setting risk limits, one can hoefully reduce the volatility of returns for the ML/ANN models and thereby increase the models Sharpe ratio.
+In addition, we also believe that by setting risk limits, one can hopefully reduce the volatility of returns for the ML/ANN models and thereby increase the models Sharpe ratio.
 
 The possibilities for further investigation is endless, and we truely hope that our sparks more interest and research in this field!
 
