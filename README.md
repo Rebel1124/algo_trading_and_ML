@@ -322,7 +322,7 @@ The difference in accuracy scores between training and testing periods for the o
 |      BTC	         |     0.6023     |     0.5172     |     0.6605     |     0.9139     |		      
 |      ETH           |	   0.7318     |    	0.5015     |     0.5842     |     1.3771     |	          
 
-In addition, we also ran the Long-Short-Term-Memory Artificial Neural Network (LSTM ANN) and obtained similar and compararabe results to our original ANN Model. Consequently we have  not shown the results for this model here but for reference they can be found in the datasets/algoData_LSTM_results folder.  
+In addition, we also ran the Long-Short-Term-Memory Artificial Neural Network (LSTM ANN) and obtained similar and compararabe results to our original ANN Model. Consequently we have  not shown the results for this model here but for reference they can be found in the datasets/algoData_LSTM_results and algoData_LSTM_model_acc_loss folders.  
 
 <br>
 
