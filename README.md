@@ -321,6 +321,9 @@ The difference in accuracy scores between training and testing periods for the o
 |     GBP/JPY        |	   0.5772     |     0.5141     |     0.6733     |  	  0.7095     |            
 |      BTC	         |     0.6023     |     0.5172     |     0.6605     |     0.9139     |		      
 |      ETH           |	   0.7318     |    	0.5015     |     0.5842     |     1.3771     |	          
+
+In addition, we also ran the Long-Short-Term-Memory Artificial Neural Network (LSTM ANN) and obtained similar and compararabe results to our original ANN Model. Consequently we have  not shown the results for this model here but for reference they can be found in the datasets/algoData_LSTM_results folder.  
+
 <br>
 
 ### **Best Strategies per Asset**
