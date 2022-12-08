@@ -254,12 +254,12 @@ This model was then run for each asset with same cumulative returns and descript
 
 ---
 ## **Results**
+
+### **Random Forest Classifiction Report**
+
 Firstly, our results from the Random Forest models show that Accuracy scores between the three models ranged from 0.46 to 0.54. Even more noteworthy are the models accuracy and recall score for the buy and sell signals. Here we saw that some models performed better for buy signals than sell signals (e.g., zScore Model for S&P500), while for others it was the opposite (e.g., standard features for Gold). There were also dramatic differences within an asset for pecision and recall scores as well (standard features - S&P500).
 
 In all, we got mixed but satisfactory results for our Random Forest models. More work can be done on this by tuning the models hyperparameters and it is envisaged that better model results can be obtained.
-<br>
-
-### **Random Forest Classifiction Report**
 
 ***(1) Standard Scaler Features***
 
@@ -303,12 +303,13 @@ In all, we got mixed but satisfactory results for our Random Forest models. More
 |      ETH           |	   0.47   |    	0.63    |    0.47    |    0.32       |	  0.47    |
 <br>
 
+
+### **ANN Model Scores**
+
 Next for the Artificial Neural Network Model, we again received mixed results with accuracy scores of the training and testing periods ranging from 0.5 to 0.73, which in all accounts is a notable difference. The biggest difference was observed for the crypto asset class (BTC and ETH) which we have attributed to the smaller training period window. 
 
 The difference in accuracy scores between training and testing periods for the other asset classes, were also notable but not as dramatic and satisfactory-looking. However, we strongly believe further research can be done on improving these models and reducing the differences between traing and testing scores.
 <br>
-
-### **ANN Model Scores**
 
 |     Asset  	     |  Training Acc  |	   Test Acc    | Training Loss  |   Test Loss	 |
 |--------------------|----------------|----------------|----------------|----------------|
@@ -322,6 +323,8 @@ The difference in accuracy scores between training and testing periods for the o
 |      ETH           |	   0.7318     |    	0.5015     |     0.5842     |     1.3771     |	          
 <br>
 
+### **Best Strategies per Asset**
+
 Finally we looked at the returns produced by the models for each asset and determined the winning and runner up strategies for our back testing period. Results are shown in the tables below. Our analysis shows that there is an evenly split between the traditional and ML/ANN models in terms of the best and second best strategies when looking at the strategy returns as well as Sharpe ratios.
 
 The ANN produced the highest return at 54.75% for ETH but was trumped by the Impulse system at 79.23%. It should be noted though that ETH had the smallest testing period due to limited data, nevertheless the results produced were notable.
@@ -329,9 +332,6 @@ The ANN produced the highest return at 54.75% for ETH but was trumped by the Imp
 For the Random forest, the highest return is produced by normalized features at 23.08% and that is for Russel2000, which beats the MACD strategy at 16.74%.
 
 In total 8 of the technical strategies had produced either winning returns or runner up returns and likewise we had 8 ML/ANN models producing the same results in a tie! (We found the exact same returns when accounting for volatility when we looked at the Sharpe ratios).
-<br>
-
-### **Best Strategies per Asset**
 
 ***(1) Asset Returns***
 
